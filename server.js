@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const routeEmployee = require("./routes/employee")
+const routeCompany = require("./routes/company")
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use(function(req,res,next) {
 
 app.use(bodyParser.json())
 app.use('/emp',routeEmployee)
+app.use("/company",routeCompany)
 
 app.listen(9898,'0.0.0.0',() =>{
     console.log("server is started on port 9898")
